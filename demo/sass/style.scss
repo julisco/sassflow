@@ -1,0 +1,36 @@
+.titi {
+  &__toto {
+    display: inline;
+    margin-bottom: 20px; // declaration-block-no-ignored-properties: Unexpected "margin-bottom" with "display: inline"
+    font-size: 15px;
+    font-size: 10px; // declaration-block-no-duplicate-properties: duplicate "font-size"
+    padding-bottom: 15px;
+    padding: 10px; // declaration-block-no-shorthand-property-overrides: Unexpected shorthand "padding" after "padding-bottom"
+    color: black; // wrong indentation
+    font-weight: bold;
+    $tests: "a b c"; // string-quotes: Expected single quotes
+  }
+}
+
+.img {
+  background-image: resolve('img-test.jpg');
+}
+
+.tata {
+  padding: 5px 0 0 0; // shorthand-property-no-redundant-values: Expected '5px 0 0'
+
+  &:focus {
+    color: colorFigaro('white'); // function-name-case: no camelCase allowed
+  } // rule-empty-line-before: Expected empty line before rule
+  &:before { // selector-pseudo-element-colon-notation: Expected double colon
+    opacity: .5; // number-leading-zero: Expected a leading zero
+    left: 25%
+  }
+}
+
+.tata {} // no-duplicate-selectors & block-no-empty
+
+.toto:hover {
+  color : red; // declaration-colon-space-before : Unexpected whitespace before ":"
+}
+// no-missing-end-of-source-newline : Unexpected missing end-of-source newline
